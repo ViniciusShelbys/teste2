@@ -5,7 +5,10 @@ const Splash = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const timer = setTimeout(() => navigate('/dashboard'), 3000);
+    const timer = setTimeout(() => {
+      navigate('/dashboard');
+    }, 3000);
+
     return () => clearTimeout(timer);
   }, [navigate]);
 
@@ -16,12 +19,10 @@ const Splash = () => {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      flexDirection: 'column',
       color: '#fff',
       fontSize: 32,
       fontFamily: "'Poppins', sans-serif",
       fontWeight: 'bold',
-      letterSpacing: 2
     }}>
       RoxApp
     </div>
