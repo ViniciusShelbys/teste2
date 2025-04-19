@@ -9,16 +9,14 @@ const App = () => {
   const darkMode = localStorage.getItem('darkMode') === 'true';
 
   return (
-    <Routes>
-      <Route path="/" element={<Splash />} />
-      <Route path="/dashboard" element={<Dashboard darkMode={darkMode} />} />
-      <Route path="/transacoes" element={<Transacoes darkMode={darkMode} />} />
-    </Routes>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Splash />} />
+        <Route path="/dashboard" element={<Dashboard darkMode={darkMode} />} />
+        <Route path="/transacoes" element={<Transacoes darkMode={darkMode} />} />
+      </Routes>
+    </Router>
   );
 };
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <Router>
-    <App />
-  </Router>
-);
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
